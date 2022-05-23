@@ -1,1 +1,0 @@
-simple Sinatra To do list application 
