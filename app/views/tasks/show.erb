@@ -1,0 +1,19 @@
+<h1>Hello <%=@user.name %>!</h1>
+<a href="/lists/new"><button type="button" class="btn btn-default">Create A New List</button></a>
+
+<div class="col-6">
+<% @lists.each do |list|%>
+<% if list.user_id == @user.id %>
+<h2><%= list.name %></h2>
+<a href="/lists/<%=list.id%>/edit"><i class="fa fa-pencil"></i> Edit List</a>
+<a href="/lists/<%=list.id%>/delete"><i class="fa fa-times"></i> Delete List</a>
+<h4><a href="tasks/new/<%=list.id%>"><i class="fa fa-plus"></i> New Task</a></h4>
+
+<% list.todos.each do |task| %>
+<h4></i> <%= task.name %>
+<a href="/tasks/<%= task.id %>/edit"><i class="fa fa-pencil"></i>Edit</a>
+<a href="/tasks/<%= task.id %>/delete"><i class="fa fa-times"></i>Delete</a>
+</h4>
+<% end %>
+<% end %>
+<% end %>
