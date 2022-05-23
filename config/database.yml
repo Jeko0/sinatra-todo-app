@@ -3,8 +3,8 @@ default: &default
   encoding: utf8
   pool: 2
   database: todo
-  username: postgres
-  password: jeMMo1999.
+  username: ....
+  password: ....
   host: localhost
   port: 5432
 
