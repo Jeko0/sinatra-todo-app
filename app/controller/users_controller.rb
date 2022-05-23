@@ -56,8 +56,6 @@ class UsersController < ApplicationController
   patch "/edit/:id" do 
     @user = User.find(params[:id])
     @user.name = params[:name] unless params[:name] == ""
-    @user.email = params[:email] unless params[:email] == ""
-    @user.password = params[:password] unless params[:password] = ""
     @user.save
     redirect '/tasks'
   end
